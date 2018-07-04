@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con{
+            width:500px;
+            height:300px;
+            border:1px solid #000;
+            margin:50px auto 0;
+
+            /*  父元素的font-size设置为0，子元素再设置它自己的字体大小，可以解决内联元素小间隙的问题 */
+            font-size:0px;
+
+            text-align:center;
+        }
+
+        .con a,.con span{
+            background:gold;
+            width:100px;
+            height:100px;
+            /* margin:100px 20px; */
+            /* padding:30px 20px; */
+
+            /* margin上下和padding上下设置无效，可以用line-height来设置内联元素的上下间距 */
+            /* line-height:50px; */
+            font-size:16px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="con">
+        <a href="#">链接一</a>
+        <a href="#">链接二</a>
+        <span>span元素一</span>
+        <span>span元素二</span>
+    </div>
+</body>
+</html>

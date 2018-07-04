@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div1 = $('div').has('span');
+            var $ul = $('.list')
+            
+
+            $div1.css({'color':'red'});
+            $('div').has('span').next().css({'background':'green'});
+            $('div').has('span').prev().css({'font-size':25});
+            $('div').has('span').parent().css({'background':'skyblue'});
+            $('div').has('span').next().next().children().css({'text-decoration':'none'});
+            $('div').has('span').siblings().css({'color':'yellow'});
+            $ul.find('.myclass').css({'color':'green'});
+            $ul.children().eq(5).css({'font-size':30});
+            $ul.children().eq(5).addClass('red');
+            
+            $ul.children().eq(5).toggleClass('red');
+            
+            
+    
+
+            $li.click(function(){
+                $(this).css({'color':'purple'});
+
+
+            })
+
+
+
+        })
+
+
+    </script>
+    <style>
+        .red{
+            color:blue;
+        }
+    </style>
+
+</head>
+<body>
+    <div>这是一个div标签</div>
+    <div><span>这是第二个div标签</span> </div>
+    <div class='box'>这是第三个div</div>
+    <div class="box2">这是第四个div <a href="#">请点击链接</a> </div>
+    <ul class='list'>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li class="myclass">列表4</li>
+        <li>列表5</li>
+        <li>列表6</li>
+    </ul>
+</body>
+</html>

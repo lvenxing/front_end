@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-注册</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $user_name = $('#user_name'),
+			$pwd = $('#pwd'),
+			$cpwd = $('#cpwd'),
+			$email = $('#email'),
+			$argment =$('#allow'),
+			// $error_tip = $('.error_tip'),
+			$submit = $('.reg_sub form');
+
+			var name_error = true;
+			var passwd_error =true;
+			var re_passwd_error =true;
+			var email_error =true;
+			var agreement_error = false;
+			// 判断用户名是否合法
+			$user_name.click(function(){
+				$user_name.next().hide();
+				
+			});
+			$user_name.blur(function(){
+				check_user_name();	
+			})
+			var check_user_name = function(){
+				if($user_name.val().length==0){
+					
+					$user_name.next().html('用户名不能为空');
+					$user_name.next().show();
+					name_error = true;
+					return;
+				}
+				var reUser = /^\w{6,20}$/;
+				if(reUser.test($user_name.val())){
+					$user_name.next().hide();
+					name_error = false;
+					return;
+				}
+				$user_name.next().html('用户名必须是6-20位的由字母、数字、下划线组成');
+				$user_name.next().show();
+				name_error = false;
+			}
+			// 判断密码是否合法
+			
+			$pwd.blur(function(){
+				check_pwd();	
+			}).click(function(){
+				$pwd.next().hide();
+			})
+			var check_pwd = function(){
+				if($pwd.val().length==0){
+					
+					$pwd.next().html('密码不能为空');
+					$pwd.next().show();
+					passwd_error = true;
+					return;
+				}
+				var rePass = /^[\w!@#$%^&*]{6,20}$/;
+				if(rePass.test($pwd.val())){
+					$pwd.next().hide();
+					passwd_error = true;
+					return;
+				}
+				$pwd.next().html('密码必须是6-20位的由字母、数字、下划线、特殊字符等组成');
+				$pwd.next().show();
+				passwd_error = true;
+			}
+
+			// 确认两次输入密码是否一致
+			$cpwd.blur(function(){
+				check_cpwd();	
+			}).click(function(){
+				$cpwd.next().hide();
+			})
+			var check_cpwd = function(){
+				if($pwd.val()!=$cpwd.val()){
+					$cpwd.next().html('两次输入的密码不一致，请重新输入');
+					$cpwd.next().show();
+					re_passwd_error =true;
+					return;
+
+				}
+				$cpwd.next().hide();
+				re_passwd_error =false;
+				
+			}
+
+			// 邮箱验证
+			$email.blur(function(){
+				check_email();	
+			}).click(function(){
+				$email.next().hide();
+			})
+			var check_email = function(){
+				if($email.val().length==0){
+					
+					$email.next().html('邮箱不能为空');
+					$email.next().show();
+					passwd_error = true;
+					return;
+				}
+				var reMail = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/i;
+				if(reMail.test($email.val())){
+					$email.next().hide();
+					email_error = true;
+					return;
+				}
+				$email.next().html('您输入的邮箱不正确');
+				$email.next().show();
+				email_error = true;
+			}
+			
+			// 判断用户协议
+			
+			$argment.click(function(){
+				if($(this).is(':checked')){
+					agreement_error = false;
+					$(this).siblings('.error_tip2').hide();
+				}
+				else{
+					agreement_error = true;
+					$(this).siblings('.error_tip2').html('请勾选同意');
+					$(this).siblings('.error_tip2').show();					
+				}
+			})
+			
+			// 判断所有输入是否合法
+			$submit.submit(function() {
+
+if(error_name == false && error_pwd == false && error_check_pwd == false && error_email == false && error_check == false)
+{
+	return true;
+}
+else
+{
+	return false;
+}
+
+});
+			
+
+		})
+	</script>
+</head>
+<body>
+	<div class="register_con">
+		<div class="l_con fl">
+			<a class="reg_logo"><img src="images/logo02.png"></a>
+			<div class="reg_slogan">足不出户  ·  新鲜每一天</div>
+			<div class="reg_banner"></div>
+		</div>
+
+		<div class="r_con fr">
+			<div class="reg_title clearfix">
+				<h1>用户注册</h1>
+				<a href="#">登录</a>
+			</div>
+			<div class="reg_form clearfix">
+				<form>
+				<ul>
+					<li>
+						<label>用户名:</label>
+						<input type="text" name="user_name" id="user_name" >
+						<span class="error_tip">提示信息</span>
+					</li>					
+					<li>
+						<label>密码:</label>
+						<input type="password" name="pwd" id="pwd">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>确认密码:</label>
+						<input type="password" name="cpwd" id="cpwd">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>邮箱:</label>
+						<input type="text" name="email" id="email">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li class="agreement">
+						<input type="checkbox" name="allow" id="allow" checked="checked">
+						<label>同意”天天生鲜用户使用协议“</label>
+						<span class="error_tip2">提示信息</span>
+					</li>
+					<li class="reg_sub">
+						<input type="submit" value="注 册" name="">
+					</li>
+				</ul>				
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="footer no-mp">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>		
+		</div>
+		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+	
+</body>
+</html>

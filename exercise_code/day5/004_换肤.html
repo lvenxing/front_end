@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/skin02.css" id='link01'>
+    
+    <script>
+        window.onload = function(){
+        var oSkin1 = document.getElementById('link01'),
+        oOpt1 = document.getElementById('opt1'),
+        oOpt2 = document.getElementById('opt2');
+       
+        oOpt1.onclick = function(){
+            oSkin1.href = '../css/skin01.css';
+        }
+        oOpt2.onclick = function(){
+            oSkin1.href = '../css/skin02.css';
+        }
+    }
+    </script>
+
+    <!-- <style>
+        #opt1{
+            color:red;  
+        }
+        #opt2{
+            color:green;
+            
+        }
+        
+    </style> -->
+</head>
+<body>
+    <h3>请点击更换皮肤</h3>
+    <input type="button" id = "opt1" value="皮肤一">
+    <input type="button" id = "opt2" value="皮肤二">
+</body>
+</html>

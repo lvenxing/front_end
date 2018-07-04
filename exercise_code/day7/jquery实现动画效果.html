@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background: skyblue;
+            margin-top:50px;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+           var $box = $('.box');
+           $box.animate({'margin-left':1000},2000,function(){
+               $box.animate({'margin-left':0},2000,function(){
+                   $box.animate({'margin-top':700},2000)
+               })
+
+           });
+
+
+
+        })
+    </script>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

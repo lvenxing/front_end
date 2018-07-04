@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div{
+            width:678px;
+            height:660px;
+            background: #00ccff;
+            overflow: hidden;
+            margin:20px auto;
+        }
+        
+        form{
+            width:500px;
+            height:550px;
+            
+            text-align:right;
+            font-size:14px;
+            font-family:"Microsoft YaHei";
+            background: white;
+            margin-left:92px;
+            margin-top:82px;
+        
+        }
+        h3{
+            margin-top:12px;
+            margin-left:35px;
+            padding:0;
+            width:435px;
+            height:50px;
+            font-size:24px;
+            font-family:"Microsoft YaHei";
+            color:#ff9966;
+            border-bottom:1px solid #cccccc;
+            
+            line-height:50px;
+            text-align:left;
+            /* padding-right:365px; */
+        }
+        .p0 input,.p1 input,.p2 input,.p3 input{
+            width:328px;
+            height:38px;
+        }
+        .p4 textarea{
+            width:328px;
+            height:72px;
+        }
+        .p5 input{
+            width:14px;
+            height:12px;
+        }
+        .p6 input{
+            width:330px;
+            height:36px;
+            background:#00ccff;
+            border:0px;
+        }
+        p{
+            margin-right:44px;
+        }
+        .p5 {
+            
+            margin-right:248px;
+            /* margin-left:126px; */
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        <form action="">
+            <h3>注册表单</h3>
+            <p class="p0">
+                <label >用户名：</label>
+                <input name="username" type="text">
+            </p>
+            
+           <p class="p1">
+               <label >密码：</label>
+               <input  name="password" type="password">
+           </p>
+           <p class="p2">
+               <label for="">确认密码：</label>
+               <input type="password">
+           </p>
+           <p class="p3">
+               <label for="">邮箱：</label>
+               <input name="email" type="text">
+           </p>
+           <p class="p4">
+               <label for="">个人简介：</label>
+               <textarea name="introduce" ></textarea>
+           </p>
+           <p class="p5">
+               <input type="checkbox" >
+               <label for="">同意用户使用协议</label>
+           </p>
+           <p class="p6">
+               
+               <input type="submit" value="注册">
+           </p>
+        </form>
+    </div>
+</body>
+</html>

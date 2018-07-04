@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+       .outer_line{
+           width:600px;
+           height:450px;
+           border:1px solid black;
+           position:relative;
+       } 
+       .box1,.box2,.box3{
+           width:300px;
+           height:100px;
+           margin:30px;
+           background:aqua;
+
+       }
+       .box1{
+           position:absolute;
+           left:80px;
+           top:80px;
+       }
+       .box2{
+           background: blue;
+       }
+       .box3{
+           background: yellowgreen;
+       }
+    </style>
+</head>
+<body>
+    <div class="outer_line">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

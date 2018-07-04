@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('box1');
+            var iLeft = 0;
+            var iSpeed = 3;
+
+            var oTimer = setInterval(fnMove, 30);
+            function fnMove(){
+                iLeft += iSpeed; 
+                
+                if(iLeft> 600){
+                    // clearInterval(oTimer)
+                    iSpeed = -3;
+                }
+                if(iLeft==0){
+                    iSpeed = 3;
+                }
+                oBox.style.left = iLeft +'px';
+            }
+
+
+        }
+    </script>
+
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background: skyblue;
+            margin-top:200px;
+            position:fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id='box1'></div>
+</body>
+</html>

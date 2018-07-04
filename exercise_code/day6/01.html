@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var aList = [0,1,2,3,3,4,2,5,6,7,3,8,4,9,0]
+        var aList2 = []
+        
+        for(var i = 0;i<aList.length;i++){
+            if(aList.indexOf(aList[i])==i){
+                // aList2.push(aList[i])
+            }
+        
+
+        }
+        // alert(aList2)
+        var sTr1 = 'asdgsdfgwjeriji2ri'
+        sTr2 = sTr1.split('').reverse().join('')
+        // alert(sTr2)
+        
+        function fnMylert(){
+            alert("hello, I'm coming")
+        }
+
+        var oTimer1 = setTimeout(fnMylert, 1000)
+        clearTimeout(oTimer1)
+        var oTimer2 = setInterval(fnMylert, 2000)
+        clearInterval(oTimer2)
+        alert(oTimer1)
+        alert(oTimer2)
+    </script>
+</body>
+</html>
